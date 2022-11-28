@@ -1,0 +1,28 @@
+,
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log*
+firebase-debug.*.log*
+
+# Firebase cache
+.firebase/
+
+# Dependency directories
+node_modules/
+package-lock.json
+
+# dotenv environment variables file
+.env
+
+**/assets/css/src/common/_generated-icon-vars.scss
+**/assets/css/style.css
+**/assets/css/style.js
+**/assets/js/script.js
+
+#editor
+.idea/

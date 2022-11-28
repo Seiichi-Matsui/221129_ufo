@@ -1,0 +1,11 @@
+@use "sass:math";
+@use "sass:string";
+@use "./common/vars" as *;
+@use "./common/mixins" as *;
+@use "./common/generated-icon-vars" as *;
+
+$side-padding: min( 20px, #{ math.div( 20, 430 ) * 100vw } );
+
+//
+// -----------------------------------------------------------------------------
+
