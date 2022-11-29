@@ -1,0 +1,46 @@
+@use "./mixins" as *;
+
+header {
+    position: fixed;
+    z-index: 999;
+    .nav__container {
+        display: grid;
+        grid-template: 
+        "left center right"
+        /10% 1fr 10%;
+        background-color: rgba(222,0,16,.7);
+        opacity: 0.9;
+
+        .navbar-brand {
+            grid-area: left;
+            margin: auto 0 auto auto;
+        }
+        .nav__contents {
+            grid-area: center;
+            display: flex;
+            width: 100%;
+            padding-left: 10%;
+            padding-right: 10%;
+            margin: auto;
+            
+
+            li {
+                img {
+                    object-fit: contain;
+                    height: 5vw;
+                }
+            }
+        }
+
+        .nav__icon {
+            grid-area: right;
+            margin: auto auto auto 0;
+            width: 100%;
+            .fa-facebook,
+            .fa-twitter {
+                color: #fff200;
+                margin-left: 10%;
+            }
+        }
+    }
+}

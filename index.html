@@ -5,9 +5,108 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>とりあえず</title>
+    <title>日清焼きそばU.F.O.</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    開くまで
+    <main>
+        <header>
+            <nav class="navbar navbar-light" style="padding: 0;">
+                <div class="nav__container">
+                  <a class="navbar-brand" href="#">
+                    <img 
+                    src="./assets/img/pc/logo.png"
+                    alt="日清焼きそばufo"
+                    height="4vw"
+                    >
+                  </a>
+                  <ul class="nav__contents">
+                    <a href="#"><li><img 
+                        src="./assets/img/pc/nav_top.png"
+                        alt="TOP"
+                        ></li></a>
+                    <a href="#"><li><img
+                        src="./assets/img/pc/nav_cm.png"
+                        alt="CM"
+                        ></li></a>
+                    <a href="#"><li><img
+                        src="./assets/img/pc/nav_product.png"
+                        alt="商品情報"
+                        ></li></a>
+                    <a href="#"><li><img
+                        src="./assets/img/pc/nav_special.png"
+                        alt="スペシャル"
+                        ></li></a>
+                    <a href="#"><li><img
+                        src="./assets/img/pc/nav_history.png"
+                        alt="歴史"
+                        ></li></a>
+                    <a href="#"><li><img 
+                        src="./assets/img/pc/nav_gujoba.png" 
+                        alt="アトラクション"
+                        ></li></a>
+                  </ul>
+                  <div class="nav__icon">
+                    <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                    
+                  </div>
+                </div>
+              </nav>
+        </header>
+        <section class="hero">
+            <h1><img src="./assets/img/pc/main_11.jpg" alt="濃くて旨いから、売り上げNo.1"></h1>
+        </section>
+        <section class="contents__container">
+            <div id="container_1" class="container__1">
+                <img
+                class="animation__1"
+                src="./assets/img/pc/sizzle_title.png"
+                alt="濃い！濃い！濃い濃厚ソース！"
+                >
+                <img
+                id="rellax_1"
+                class="rellax__1"
+                src="./assets/img/pc/sizzle_yakisoba.png"
+                alt="濃厚焼きそばUFO"
+                data-rellax-percentage="0.7"
+                data-rellax-speed="1"
+                >
+            </div>
+            <div id="container_2" class="container__2">
+                <a class="container__2__top" href="#"><img src="./assets/img/pc/banner_83.jpg" alt="うまさモンスター級！パンに挟もうぜ！"></a>
+                <a class="container__2__middle" href="#"><img src="./assets/img/pc/banner_08.jpg" alt="ちょっとした思いやりで食べるキャベツ、食べる前に#キャベバンバン"></a>
+                <a class="container__2__left" href="#"><img src="./assets/img/pc/banner_02_03.jpg" alt="商品紹介"></a>
+                <a class="container__2__right" href="#"><img src="./assets/img/pc/banner_03_01.jpg" alt="日清焼きそばUFOの歴史"></a>
+            </div>
+            <div id="container_3" class="container__3">
+                
+            </div>
+            <div id="container_4" class="container__4"></div>
+        </section>
+    </main> 
 </body>
+
+<!-- <script charset="utf-8">
+//　パララックス対象要素のDOMを全て取得
+const rellaxin = document.querySelectorAll(".rellax__1");
+//　それぞれの親要素にrelativeなwrapperを付与
+rellaxin.forEach(el => {
+
+  const rellax = new Rellax(el, {
+    relativeToWrapper: true,
+    wrapper: el.parentElement
+  });
+// バグfix
+  window.addEventListener("scroll", () => { // fix to init
+    rellax.refresh();
+  });
+
+}); -->
+
+</script> 
+<script type="text/javascript" src="assets/js/src/rellax.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+<script type="text/javascript" src="assets/js/src/main.js"></script>
 </html>

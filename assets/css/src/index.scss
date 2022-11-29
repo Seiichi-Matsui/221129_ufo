@@ -2,3 +2,7 @@
 @use "./icon-init";
 @use "./base";
 @use "./components";
+@use "./common/reset";
+@use "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@use "./common/header-footer";
+@use "./main";
