@@ -6,6 +6,7 @@
     "build": "npm run iconfont && webpack --mode production --config ./build/webpack.config.js"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "core-js": "^3.22.8",
     "gsap": "^3.10.4",
     "in-view-observer": "^0.5.3",
