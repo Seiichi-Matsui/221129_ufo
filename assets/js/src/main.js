@@ -1,70 +1,48 @@
 const sticky1 = document.getElementById('sticky_item1')
-const sticky2 = document.getElementById('sticky_item2')
-let sticky__bg = document.getElementById('sticky__bg')
+const sticky1_img = document.getElementById('sticky_item1_img')
 const sticky_item2_img = document.getElementById('sticky_item2_img')
+const sticky__bg = document.getElementById('sticky__bg')
+let sticky1Point = sticky1_img.getBoundingClientRect().top
+const animation1 = document.getElementById('container_1_animation')
+const animation2 = document.getElementById('container_3_animation_1')
+const animation3 = document.getElementById('container_3_animation_2')
 
 
 window.addEventListener('scroll', () => {
-    let sticky__top = document.getElementById('sticky_item1').getBoundingClientRect().top;
-    let sticky__bottom = document.getElementById('sticky_item1').getBoundingClientRect().bottom;
-    let sticky_item2_top = document.getElementById('sticky_item2').getBoundingClientRect().top;
-    let sticky_item2_bottom = document.getElementById('sticky_item2').getBoundingClientRect().bottom;
-    let container_2 = document.getElementById('container_2').getBoundingClientRect().top;
-    let sticky__bg__h = document.getElementById('sticky__bg').clientHeight
-    const scroll = window.scrollY;
-    const height = document.documentElement.clientHeight
     const width = document.documentElement.clientWidth
-    stickyWrapper = document.getElementById('sticky__bg').getBoundingClientRect().top;
-    const i = sticky_item2_top * -1
-        if (i > -300 && container_2 >= 0) {
-                sticky1.style.top = i +250 +"px"
-        } else if (container_2 < 0) {
-            const h = container_2 * -1
-            sticky1.style.top = i + h + 250 +"px"
-            sticky__bg.style.height = h * 1.25 + "px"
+    const scroll = window.scrollY;
+    const stickyH1 = scroll - width * 0.48
+    const bgH = (scroll - width * 0.98) * 1.4
+    const noodleBottom = width *0.69 //焼きそば下100vw
 
-            if (sticky__bg__h + 30 > width * 0.40 && sticky__bg__h + 30 < width * 0.57) {
-                const e = (width * 0.40 - sticky__bg__h - 30) * -1
-                const r = (width / e)-2
-                sticky_item2_img.style.transform = "rotate(12deg) translate(52%,"+ r +"%)"
-                const g = i + h + 250 +"px"
-            } else {
-                sticky1.style.top = i + h + 250 +"px"
-            }
-        } else {
-        }
-        
-            
 
-        
 
+        console.log("スクロール量：" + scroll);
+    if (width * 0.15 < scroll) {
+        animation1.classList.add('container__1__animation')
+    }
+    if (width * 0.48 < scroll && width * 0.98 > scroll ){
+        // 焼きそば上
+        sticky1_img.style.top = stickyH1 + "px"
+    } else if (width * 0.98 <= scroll && width * 0.57 > bgH ) {
+        // 焼きそば上
+        sticky1_img.style.top = stickyH1 - bgH + "px"
+        // 焼きそば背景
+        sticky__bg.style.height = bgH + "px"
+        // 焼きそば下
+        const t = noodleBottom - bgH
+        sticky_item2_img.style.transform =  "skew(0, 12deg) translate(0," + t + "px)"
+
+    } else if (width * 0.57 <= bgH && width * 1.432 > scroll) {
+        // 焼きそば上
+        sticky1_img.style.top = stickyH1 - width * 0.57 + "px"
+
+
+        animation2.classList.remove('container_3_animation_1')
+        animation3.classList.remove("container_3_animation_2")
+
+    } else if (width * 1.432 <+ scroll){
+        animation2.classList.add('container_3_animation_1')
+        animation3.classList.add("container_3_animation_2")
+    }
 })
-// window.addEventListener('resize', () => {
-//     const element = document.getElementById('scroll__point').clientHeight;
-//     const navheight = document.getElementById('global-nav').clientHeight
-//     const scroll = window.scrollY;
-//     const width = window.screenX
-//     if(width < 735) {
-//         nav.classList.remove('nav__float__pc')
-//         nav.classList.remove('fixed__pc')
-//         headerHeight.style.marginBottom = navheight + "px"
-//         if(element <= scroll) {
-//             nav.classList.remove('nav__float__sp')
-//             nav.classList.add('fixed__sp')
-//         } else {
-//             nav.classList.add('nav__float__sp')
-//             nav.classList.remove('fixed__sp')
-//         }
-//     } else {
-//         nav.classList.remove('nav__float__sp')
-//         nav.classList.remove('fixed__sp')
-//         headerHeight.style.marginBottom = "55px"
-//         if(element <= scroll) {
-//             nav.classList.remove('nav__float__pc')
-//             nav.classList.add('fixed__pc')
-//         } else {
-//             nav.classList.add('nav__float__pc')
-//             nav.classList.remove('fixed__pc')
-//         }
-//     }
-// })
