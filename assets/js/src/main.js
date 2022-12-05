@@ -7,6 +7,29 @@ const animation1 = document.getElementById('container_1_animation')
 const animation2 = document.getElementById('container_3_animation_1')
 const animation3 = document.getElementById('container_3_animation_2')
 
+const hamburgerMenu = document.getElementById('hamburger__menu')
+const navWrapper = document.getElementById('sp_nav_wrapper')
+const navSpecialToggle = document.getElementById('nav_special')
+const navIconToggle = document.getElementById('nav_icon')
+const specialBtn = document.getElementById('special_btn')
+
+
+// ハンバーガーメニュー
+function menu__toggle() {
+    hamburgerMenu.classList.toggle('nav__button__on')
+    navWrapper.classList.toggle('sp__nav__wrapper')
+    navIconToggle.classList.toggle('nav__icon__on')
+}
+
+// navスペシャル
+function navSpecial() {
+        const width = document.documentElement.clientWidth
+    if (width <= 940) {
+        navSpecialToggle.classList.toggle('nav__special__on')
+        specialBtn.classList.toggle('special__btn__opn')
+        specialBtn.classList.toggle('special__btn__cls')
+    }
+}
 
 window.addEventListener('scroll', () => {
     const width = document.documentElement.clientWidth

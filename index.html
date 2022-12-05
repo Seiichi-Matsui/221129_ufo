@@ -12,103 +12,216 @@
 <body>
     <main>
         <header>
-            <nav class="navbar navbar-light" onmouseleave="navListOff()" style="padding: 0;">
+            <nav class="navbar navbar-light" style="padding: 0;">
                 <div class="nav__container">
-                  <a class="navbar-brand" href="#">
-                    <img 
-                    class="hover__opacity__light"
-                    src="./assets/img/pc/logo.png"
-                    alt="日清焼きそばufo"
-                    height="4vw"
-                    >
-                  </a>
-                  <ul class="nav__contents">
-                    <li class="nav__hover"><a href="#">
-                        <img 
-                        src="./assets/img/pc/nav_top.png"
-                        alt="TOP"
-                        ></a></li>
-                    <li class="nav__hover"><a href="#">
-                        <img 
-                        src="./assets/img/pc/nav_cm.png"
-                        alt="CM"
-                        ></a></li>
-                    <li class="nav__hover"><a href="#">
-                        <img 
-                        src="./assets/img/pc/nav_product.png"
-                        alt="商品情報"
-                        ></a></li>
-                    <li class="special">
-                        <div class="nav__hover"><a href="#">
-                        <img 
-                        src="./assets/img/pc/nav_special.png"
-                        alt="スペシャル"
-                        ></a>
-
-                        </div>
-                        <ul id="nav_special" class="nav__special">
-                            <li><a href="#">
-                                <div class="nav__hover">
-                                    <img
-                                    src="./assets/img/pc/nav_special_banban.png"
-                                    alt="#キャベバンバン"
-                                    >
-                                </div>
+                    <div class="sp__header">
+                        <a class="navbar-brand" href="#">
+                            <img 
+                            class="pc hover__opacity__light"
+                            src="./assets/img/pc/logo.png"
+                            alt="日清焼きそばufo"
+                            >
+                            <img 
+                            class="sp hover__opacity__light"
+                            src="./assets/img/sp/logo.png"
+                            alt="日清焼きそばufo"
+                            >
+                        </a>
+                        <button id="hamburger__menu" class="sp nav__button" onclick="menu__toggle()">
+                            <img
+                            src="./assets/img/sp/btn_menu.png" 
+                            alt="メニュー表示"
+                            >
+                        </button>
+                    </div>
+                    <div id="sp_nav_wrapper" class="nav__wrapper">
+                        <ul class="nav__contents">
+                            <li class="nav__hover"><a href="#">
+                                <img 
+                                class="pc"
+                                src="./assets/img/pc/nav_top.png"
+                                alt="TOP"
+                                >
+                                <img 
+                                class="sp"
+                                src="./assets/img/sp/btn_menu-top.png"
+                                alt="TOP"
+                                >
                             </a></li>
-                            <li><a href="#">
-                                <div class="nav__hover">
-                                    <img
-                                    src="./assets/img/pc/nav_special_momotaro.png"
-                                    alt="桃太郎電鉄コラボサイト"
-                                    >
-                                </div>
+                            <li class="nav__hover"><a href="#">
+                                <img 
+                                class="pc"
+                                src="./assets/img/pc/nav_cm.png"
+                                alt="CM"
+                                >
+                                <img 
+                                class="sp"
+                                src="./assets/img/sp/btn_menu-cm.png"
+                                alt="CM"
+                                >
                             </a></li>
-                            <li><a href="#">
-                                <div class="nav__hover">
-                                    <img
-                                    src="./assets/img/pc/nav_special_chomolungma.png"
-                                    alt="チョモランマUFOレシピ"
-                                    >
-                                </div>
+                            <li class="nav__hover"><a href="#">
+                                <img 
+                                class="pc"
+                                src="./assets/img/pc/nav_product.png"
+                                alt="商品情報"
+                                >
+                                <img 
+                                class="sp"
+                                src="./assets/img/sp/btn_menu-product.png"
+                                alt="商品情報"
+                                >
                             </a></li>
-                            <li><a href="#">
-                                <div class="nav__hover">
-                                    <img
-                                    src="./assets/img/pc/nav_special_monster.png"
-                                    alt="モンスター焼きそばパン"
+                            <li class="special">
+                                <div class="nav__hover" onclick="navSpecial()">
+                                    <a
+                                    id="special_btn"
+                                    class="special__btn__opn"
+                                    href="#"
                                     >
+                                    <img 
+                                    class="pc"
+                                    src="./assets/img/pc/nav_special.png"
+                                    alt="スペシャル"
+                                    >
+                                    <img 
+                                    class="sp"
+                                    src="./assets/img/sp/btn_menu-special.png"
+                                    alt="スペシャル"
+                                    >
+                                    </a>
                                 </div>
+                                <ul id="nav_special" class="nav__special">
+                                    <li><a href="#">
+                                        <div class="nav__hover">
+                                            <img
+                                            class="pc"
+                                            src="./assets/img/pc/nav_special_banban.png"
+                                            alt="#キャベバンバン"
+                                            >
+                                            <img
+                                            class="sp"
+                                            src="./assets/img/sp/btn_menu-special-1.png"
+                                            alt="#キャベバンバン"
+                                            >
+                                        </div>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <div class="nav__hover">
+                                            <img
+                                            class="pc"
+                                            src="./assets/img/pc/nav_special_momotaro.png"
+                                            alt="桃太郎電鉄コラボサイト"
+                                            >
+                                            <img
+                                            class="sp"
+                                            src="./assets/img/sp/btn_menu-special-momotaro.png"
+                                            alt="桃太郎電鉄コラボサイト"
+                                            >
+                                        </div>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <div class="nav__hover">
+                                            <img
+                                            class="pc"
+                                            src="./assets/img/pc/nav_special_chomolungma.png"
+                                            alt="チョモランマUFOレシピ"
+                                            >
+                                            <img
+                                            class="sp"
+                                            src="./assets/img/sp/btn_menu-special-chomolungma.png"
+                                            alt="チョモランマUFOレシピ"
+                                            >
+                                        </div>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <div class="nav__hover">
+                                            <img
+                                            class="pc"
+                                            src="./assets/img/pc/nav_special_monster.png"
+                                            alt="モンスター焼きそばパン"
+                                            >
+                                            <img
+                                            class="sp"
+                                            src="./assets/img/sp/btn_menu-special-monster.png"
+                                            alt="モンスター焼きそばパン"
+                                            >
+                                        </div>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <div class="nav__hover">
+                                            <img
+                                            class="pc"
+                                            src="./assets/img/pc/nav_special_perori-barbie.png"
+                                            alt="Barbieコラボサイト"
+                                            >
+                                            <img
+                                            class="sp"
+                                            src="./assets/img/sp/btn_menu-special-perori-barbie.png"
+                                            alt="Barbieコラボサイト"
+                                            >
+                                        </div>
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__hover"><a href="#">
+                                <img 
+                                class="pc"
+                                src="./assets/img/pc/nav_history.png"
+                                alt="歴史"
+                                >
+                                <img 
+                                class="sp"
+                                src="./assets/img/sp/btn_menu-history.png"
+                                alt="歴史"
+                                >
                             </a></li>
-                            <li><a href="#">
-                                <div class="nav__hover">
-                                    <img
-                                    src="./assets/img/pc/nav_special_perori-barbie.png"
-                                    alt="Barbieコラボサイト"
-                                    >
-                                </div>
+                            <li class="nav__hover"><a href="#">
+                                <img 
+                                class="pc"
+                                src="./assets/img/pc/nav_gujoba.png" 
+                                alt="アトラクション"
+                                >
+                                <img 
+                                class="sp"
+                                src="./assets/img/sp/btn_menu-goodjob.png" 
+                                alt="アトラクション"
+                                >
                             </a></li>
                         </ul>
-                    </li>
-                    <li class="nav__hover"><a href="#">
-                        <img 
-                        src="./assets/img/pc/nav_history.png"
-                        alt="歴史"
-                        ></a></li>
-                    <li class="nav__hover"><a href="#">
-                        <img 
-                        src="./assets/img/pc/nav_gujoba.png" 
-                        alt="アトラクション"
-                        ></a></li>
-                  </ul>
-                  <div class="nav__icon">
-                    <a class="hover__opacity__light" href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                    <a class="hover__opacity__light" href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                  </div>
+                        <div id="nav_icon" class="nav__icon container__icon">
+                            <a class="hover__opacity__light" href="#">
+                                <i class="fa fa-facebook fa-2x"></i>
+                            </a>
+                            <a class="hover__opacity__light" href="#">
+                                <i class="fa fa-twitter fa-2x"></i>
+                            </a>
+                            <a class="sp icon__line" href="#">
+                                <img 
+                                src="./assets/img/sp/ico_line.png" 
+                                alt="LINE"
+                                >
+                            </a>
+                        </div>
+                    </div>
                 </div>
               </nav>
         </header>
         <section class="hero">
-            <h1><img src="./assets/img/pc/main_11.jpg" alt="濃くて旨いから、売り上げNo.1"></h1>
+            <h1 class="pc">
+                <img 
+                src="./assets/img/pc/main_11.jpg"
+                alt="濃くて旨いから、売り上げNo.1"
+                >
+            </h1>
+            <h1 class="sp">
+                <img 
+                class="sp hover__opacity__light"
+                src="./assets/img/sp/main_11.jpg"
+                alt="日清焼きそばufo"
+                height="4vw"
+                >
+            </h1>
         </section>
         <section id="contents_container" class="contents__container">
             <div class="container__1">
@@ -120,24 +233,77 @@
                 >
             </div>
             <div id="container_2" class="container__2">
-                <a class="container__2__top picture__hover__tall" href="#">
+                <a class="contents__arrow container__2__top picture__hover__tall" href="#">
+                    <div class="img__tag">
+                        <div class="img__tag__new">
+                            <span>New</span>
+                        </div>
+                        <div class="ing__tag__name">
+                            <p>スペシャル</p>
+                        </div>
+                    </div>
                     <img
+                    class="pc"
                     src="./assets/img/pc/banner_83.jpg"
                     alt="うまさモンスター級！パンに挟もうぜ！"
-                    ></a>
-                <a class="container__2__middle picture__hover__tall" href="#">
+                    >
                     <img
+                    class="sp"
+                    src="./assets/img/sp/banner_83.jpg"
+                    alt="うまさモンスター級！パンに挟もうぜ！"
+                    >
+                </a>
+                <a class="contents__arrow container__2__middle picture__hover__tall" href="#">
+                    <div class="img__tag">
+                        <div class="ing__tag__name">
+                            <p>スペシャル</p>
+                        </div>
+                    </div>
+                    <img
+                    class="pc"
                     src="./assets/img/pc/banner_08.jpg"
                     alt="ちょっとした思いやりで食べるキャベツ、食べる前に#キャベバンバン"
-                    ></a>
-                <a class="container__2__left picture__hover__middle" href="#"><img
+                    >
+                    <img
+                    class="sp"
+                    src="./assets/img/sp/banner_08.jpg"
+                    alt="ちょっとした思いやりで食べるキャベツ、食べる前に#キャベバンバン"
+                    >
+                </a>
+                <a class="contents__arrow container__2__left picture__hover__middle" href="#">
+                    <div class="img__tag">
+                        <div class="ing__tag__name">
+                            <p>プロダクト</p>
+                        </div>
+                    </div>
+                    <img
+                    class="pc"
                     src="./assets/img/pc/banner_02_03.jpg"
                     alt="商品紹介"
-                    ></a>
-                <a class="container__2__right picture__hover__middle" href="#"><img
+                    >
+                    <img
+                    class="sp"
+                    src="./assets/img/sp/banner_02_03.jpg"
+                    alt="商品紹介"
+                    >
+                </a>
+                <a class="contents__arrow container__2__right picture__hover__middle" href="#">
+                    <div class="img__tag">
+                        <div class="ing__tag__name">
+                            <p>歴史</p>
+                        </div>
+                    </div>
+                    <img
+                    class="pc"
+                    src="./assets/img/sp/banner_03_01.jpg"
+                    alt="日清焼きそばUFOの歴史"
+                    >
+                    <img
+                    class="sp"
                     src="./assets/img/pc/banner_03_01.jpg"
                     alt="日清焼きそばUFOの歴史"
-                    ></a>
+                    >
+                </a>
             </div>
             <div id="sticky__bg" class="container__3">
                 <div id="sticky_item1" class="sticky__item1">
@@ -168,24 +334,83 @@
                 </div>
             </div>
             <div id="container_4" class="container__4">
-                <a class="container__4__topL picture__hover__middle" href="#">
+                <a class="contents__arrow container__4__topL picture__hover__middle" href="#">
+                    <div class="img__tag">
+                        <div class="img__tag__new">
+                            <span>New</span>
+                        </div>
+                        <div class="ing__tag__name">
+                            <p>CM</p>
+                        </div>
+                    </div>
                     <img
+                    class="pc"
                     src="./assets/img/pc/banner_84.jpg"
                     alt="UFOモンスター焼きそばパン"
-                    ></a>
-                <a class="container__4__topR picture__hover__middle" href="#">
+                    >
                     <img
+                    class="sp"
+                    src="./assets/img/sp/banner_84.jpg"
+                    alt="UFOモンスター焼きそばパン"
+                    >
+                </a>
+                <a class="contents__arrow container__4__topR picture__hover__middle" href="#">
+                    <div class="img__tag">
+                        <div class="img__tag__new">
+                            <span>New</span>
+                        </div>
+                        <div class="ing__tag__name">
+                            <p>スペシャル</p>
+                        </div>
+                    </div>
+                    <img
+                    class="pc"
                     src="./assets/img/pc/banner_85.jpg"
                     alt="うまさモンスター級！パンに挟もうぜ！"
-                    ></a>
-                <a class="container__4__middleL picture__hover__middle" href="#"><img
+                    >
+                    <img
+                    class="sp"
+                    src="./assets/img/sp/banner_83.jpg"
+                    alt="うまさモンスター級！パンに挟もうぜ！"
+                    >
+                </a>
+                <a class="contents__arrow container__4__middleL picture__hover__middle" href="#">
+                    <div class="img__tag">
+                        <div class="img__tag__new">
+                            <span>New</span>
+                        </div>
+                        <div class="ing__tag__name">
+                            <p>商品情報</p>
+                        </div>
+                    </div>
+                    <img
+                    class="pc"
                     src="./assets/img/pc/banner_88.jpg"
                     alt="赤ワイン仕立てのデミグラスソース味！"
-                    ></a>
-                <a class="container__4__middleR picture__hover__middle" href="#"><img
+                    >
+                    <img
+                    class="sp"
+                    src="./assets/img/sp/banner_88.jpg"
+                    alt="赤ワイン仕立てのデミグラスソース味！"
+                    >
+                </a>
+                <a class="contents__arrow container__4__middleR picture__hover__middle" href="#">
+                    <div class="img__tag">
+                        <div class="ing__tag__name">
+                            <p>商品情報</p>
+                        </div>
+                    </div>
+                    <img
+                    class="pc"
                     src="./assets/img/pc/banner_87.jpg"
                     alt="シーフード焼きそば"
-                    ></a>
+                    >
+                    <img
+                    class="sp"
+                    src="./assets/img/sp/banner_87.jpg"
+                    alt="シーフード焼きそば"
+                    >
+                </a>
             </div>
             <div class="container__icon">
                 <a class="hover__opacity__light" href="#">
@@ -198,16 +423,29 @@
                         <i class="fa fa-twitter fa-4x"></i>
                     </div>
                 </a>
+                <a class="sp icon__line" href="#">
+                    <img 
+                    src="./assets/img/sp/ico_line.png" 
+                    alt="LINE"
+                    >
+                </a>
             </div>
         </section>
         <footer>
+            <div class="footer__logo__sp sp">
+                <img
+                class="sp"
+                src="./assets/img/pc/logo2.png"
+                alt="日清グループ"
+                >
+            </div>
             <ul class="footer__nav">
                 <li class="hover__opacity__middle"><a href="#">
                     <img
                     src="./assets/img/pc/bnr_brandsite_cup.jpg"
                     alt="カップヌードル"
                     >
-                    <p>
+                    <p class="pc">
                         カップヌードル
                     </p>
                 </a></li>
@@ -216,7 +454,7 @@
                     src="./assets/img/pc/bnr_brandsite_don.jpg"
                     alt="どん兵衛"
                     >
-                    <p>
+                    <p class="pc">
                         日清のどん兵衛
                     </p>
                 </a></li>
@@ -225,7 +463,7 @@
                     src="./assets/img/pc/bnr_brandsite_chi.jpg"
                     alt="チキンラーメン"
                     >
-                    <p>
+                    <p class="pc">
                         チキンラーメン
                     </p>
                 </a></li>
@@ -234,7 +472,7 @@
                     src="./assets/img/pc/bnr_brandsite_ufo.jpg"
                     alt="UFO"
                     >
-                    <p>
+                    <p class="pc">
                         日清焼きそばUFO
                     </p>
                 </a></li>
@@ -243,7 +481,7 @@
                     src="./assets/img/pc/bnr_brandsite_rao.jpg"
                     alt="ラ王"
                     >
-                    <p>
+                    <p class="pc">
                         日清ラ王
                     </p>
                 </a></li>
@@ -252,7 +490,7 @@
                     src="./assets/img/pc/bnr_brandsite_km.jpg"
                     alt="カレーメシ"
                     >
-                    <p>
+                    <p class="pc">
                         日清カレーメシ
                     </p>
                 </a></li>
@@ -261,7 +499,7 @@
                     src="./assets/img/pc/bnr_brandsite_xf.jpg"
                     alt="完全メシ"
                     >
-                    <p>
+                    <p class="pc">
                         完全メシ
                     </p>
                 </a></li>
@@ -305,9 +543,17 @@
                             サイトのご利用について
                         </a></li>
                     </ul>
-                    <p>
+                    <p class="pc">
                         このサイトに関するお問い合わせ先：日清食品グループウェブダイヤル／
                         <a href="tell:0120-208-802">0120-208-802</a>
+                        （受付時間：9:00〜17:00土・日。祝日を除く）
+                    </p>
+                    <p class="sp footer__sub__title">
+                        このサイトに関するお問い合わせ先
+                    </p>
+                    <p class="sp footer__sub__text">
+                        清食品グループウェブダイヤル／
+                        <a href="tell:0120-208-802">0120-208-802</a><br>
                         （受付時間：9:00〜17:00土・日。祝日を除く）
                     </p>
                     <p>

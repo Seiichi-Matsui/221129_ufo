@@ -9,8 +9,30 @@ main {
     background-size: contain;
     background-repeat: repeat-y;
 
-    .hero h1 img{
+
+    .pc {
+        display: block;
+    }
+
+    .sp {
+        display: none;
+    }
+
+    @include mediaMS {
+        .pc {
+            display: none;
+        }
+
+        .sp {
+            display: block;
+        }
+    }
+
+    .hero {
+
+        h1 img{
         width: 100%;
+        }
     }
 
     .contents__container {
@@ -19,6 +41,99 @@ main {
         overflow: hidden;
         position: relative;
         
+        .contents__arrow {
+            position: relative;
+            overflow: hidden;
+
+            @include mediaMS {
+                .img__tag {
+                    line-height: 3vw;
+
+                    .img__tag__new {
+
+                        span {
+                            font-size: 4vw;
+                        }
+                    }
+
+                    .ing__tag__name {
+
+                        p {
+                            font-size: 2.5vw;
+                        }
+                    }
+                }
+
+                &::after {
+                    width: 10vw;
+                    height: 10vw;
+                }
+            }
+
+            .img__tag {
+                position: absolute;
+                display: flex;
+                transform: skew(130deg);
+                line-height: 2vw;
+                width: 30vw;
+                z-index: 1;
+
+                .img__tag__new {
+                    position: relative;
+                    transform:  translateX(-15%);
+                    background-color: #e10009;
+                    color: #fff200;
+                    padding-left: 8%;
+                    padding-right: 6%;
+                    border-bottom: 2px solid #fff200;
+                    z-index: 3;
+
+                    span {
+                        display: block;
+                        text-align: center;
+                        transform: skew(220deg);
+                        font-size: 2.3vw;
+                        font-weight: bold;
+                        padding: 3% 0;
+                        
+                    }
+                }
+
+                .ing__tag__name {
+                    background-color: #fff200;
+                    color: #e10009;
+                    padding: 0 5% 0 13%;
+                    position: relative;
+                    margin-left: -12%;
+                    z-index: 2;
+
+
+                    p {
+                        font-size: 1.5vw;
+                        font-weight: bold;
+                        display: block;
+                        text-align: center;
+                        transform: skew(220deg);
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+                }
+            }
+
+            &::after {
+                width: 6vw;
+                height: 6vw;
+                right: 0;
+                bottom: 0;
+                position: absolute;
+                content: "";
+                background-image: url(../img/pc/banner_arrow.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                z-index: 99;
+            }
+
+        }
        
 
         .container__1 {
@@ -47,6 +162,16 @@ main {
             "middle middle"
             "bottomL bottomR"
             ;
+
+            @include mediaMS {
+                width: 85%;
+                grid-template: 
+                "top"
+                "middle"
+                "bottomL"
+                "bottomR"
+                ;
+            }
 
             .container__2__top {
                 grid-area: top;
@@ -175,6 +300,16 @@ main {
             "middleL middleR"
             ;
 
+            @include mediaMS {
+                width: 85%;
+                grid-template: 
+                "topL"
+                "topR"
+                "middleL"
+                "middleR"
+                ;
+            }
+
             .container__4__topL {
                 grid-area: topL;
                 border: 2px solid #fff200;
@@ -196,6 +331,10 @@ main {
                 border: 2px solid #fff200;
                 margin-top: 2%;
 
+                @include mediaMS {
+                    margin-top: 0;
+                }
+
                 img {
                     width: 100%;
                 }
@@ -204,6 +343,10 @@ main {
                 grid-area: middleR;
                 border: 2px solid #fff200;
                 margin-top: 2%;
+
+                @include mediaMS {
+                    margin-top: 0;
+                }
 
                 img {
                     width: 100%;
@@ -214,6 +357,40 @@ main {
             margin: 5% 0;
             display: flex;
             justify-content: center;
+
+            @include mediaMS {
+                width: 85%;
+                margin: 5% auto;
+                padding: 0 3%;
+                justify-content: space-between;
+                
+                a {
+                    width: 25%;
+                    background-color: #fadb00;
+                    height: 30%;
+
+                    i {
+                        font-size: 13vw;
+                        left: 30%;
+                        top: 20%;
+                    }
+                    .container__icon__twitter i{
+                            left: 20%;
+                    }
+                }
+
+                .icon__line {
+                    background-color: transparent;
+
+                    img {
+                        width: 100%;
+                    }
+                    
+                    &::after {
+                        padding-top: 0;
+                    }
+                }
+            }
 
             a {
                 width: 8%;
@@ -244,18 +421,25 @@ main {
     }
 }
 
+
+
+
+
+
 // ホバーアクション
 
 .nav__hover {
-    perspective: 100000px;
-    transform-style: preserve-3d;
+    @include mediaL {
+        perspective: 100000px;
+        transform-style: preserve-3d;
 
-    &:hover {
-    animation-name: nav_hover;
-    animation-duration: 0.2s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    transform-origin: center;
+        &:hover {
+        animation-name: nav_hover;
+        animation-duration: 0.2s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        transform-origin: center;
+        }
     }
 }
 
@@ -510,28 +694,48 @@ main {
 	}
 }
 
-.picture__hover__tall:hover {
-    height: 19.4vw;
+.picture__hover__tall {
     overflow: hidden;
+    height: 19.4vw;
 
-    >img {
-        display: block;
-        transition-duration: .3s;
+    @include mediaMS{
+        height: auto;
+    }
 
+    @include mediaL {
         &:hover {
-            transform: scale(103%);
+
+            >img {
+                display: block;
+                transition-duration: .3s;
+
+                &:hover {
+                    transform: scale(103%);
+                }
+            }
         }
     }
 }
-.picture__hover__middle:hover {
-    overflow: hidden;
 
-    >img {
-        display: block;
-        transition-duration: .3s;
+.picture__hover__middle{
+        overflow: hidden;
+        height: 19vw;
 
-        &:hover {
-            transform: scale(103%);
+        @include mediaMS{
+            height: auto;
+        }
+
+        @include mediaL {
+            &:hover {
+
+            >img {
+                display: block;
+                transition-duration: .3s;
+
+                &:hover {
+                    transform: scale(103%);
+                }
+            }
         }
     }
 }
