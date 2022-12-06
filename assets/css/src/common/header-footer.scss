@@ -11,12 +11,14 @@ header {
         padding-right: 1%;
         display: flex;
         background-color: rgba(222,0,16,.7);
+        height: 5vw;
 
         @include mediaMS {
             padding: 0;
             background-color: transparent;
             width: 100%;
             display: block;
+            height: auto;
         }
 
         .sp__header {
@@ -90,6 +92,17 @@ header {
             }
         }
 
+        .nav__wrapper {
+            display: flex;
+            width: 92%;
+
+            @include mediaMS {
+                display: block;
+                width: 100%;
+                height: 0;
+            }
+        }
+
         .sp__nav__wrapper {
 
             @include mediaMS {
@@ -106,16 +119,6 @@ header {
             }
         }
 
-        .nav__wrapper {
-            display: flex;
-            width: 90%;
-
-            @include mediaMS {
-                display: block;
-                width: 100%;
-                
-            }
-        }
 
         .nav__contents {
             display: flex;
@@ -129,7 +132,7 @@ header {
                 position: relative;
                 display: block;
                 padding: 0;
-                transform: translateY(300%);
+                transform: translateY(-300%);
             }
             
             .special {
@@ -206,9 +209,11 @@ header {
                     }
                     img {
                         object-fit: cover;
+                        height: 3.5vw;
 
                         @include mediaMS {
                             position: relative;
+                            height: auto;
                             max-height: 80%;
                             top: 50%;
                             left: 0;
@@ -234,7 +239,7 @@ header {
                     position: absolute;
                     left: 50%;
                     width: 40%;
-                    transform: translateX(300%);
+                    transform: translateX(-300%);
                     height: 0;
                     overflow: hidden;
                     transition: height 0.5s;

@@ -1,14 +1,11 @@
 @use "./common/mixins.scss" as *;
 
-
-
 main {
     width: 100%;
     background-image: url("../img/pc/bg_fujioka.png");
     background-position: top;
     background-size: contain;
     background-repeat: repeat-y;
-
 
     .pc {
         display: block;
@@ -245,6 +242,11 @@ main {
                 z-index: 2;
                 overflow: hidden;
                 right: 0;
+
+                @include mediaMS {
+                    max-height: 233vw;
+                    height: 233vw;
+                }
 
     
                 img {
